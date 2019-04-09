@@ -1,0 +1,123 @@
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+
+//TODO vars
+
+$paginator-widths:30px 30px 30px;
+$paginator-heights:30px 30px 30px;
+
+/*************************/
+/////// CUSTOM VARS /////// 
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.paginator{
+
+}
+
+.paginator__buttons{
+    font-family: $font-1;
+    position: relative;
+    display: inline-block;
+    width:auto;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    @extend %no-user-select;
+}
+
+.paginator__btn{
+    @extend %box;
+    margin:4px;
+    width:auto;
+    line-height: nth($paginator-heights, 1);
+    vertical-align: middle;
+    border:1px solid $color-2;
+    width:nth($paginator-widths, 1); 
+    text-align: center;
+    color:$color-2;
+    background-color:transparent;
+    display: inline-block; 
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+
+    &.disabled{
+        border:1px solid rgba($color-2,0.4); 
+        color: rgba($color-2,0.4);
+    }
+}
+
+.paginator__status{
+    @extend %box;
+    margin:0 8px;
+    width:auto;
+    line-height: nth($paginator-heights, 1);
+    vertical-align: middle;
+    text-align: center;
+    color:$color-2;
+    display: inline-block; 
+    p{
+        line-height: inherit;
+    }
+}
+
+.paginator__controls{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+@include SmallDevice{
+    .paginator__buttons{
+        // height:nth($paginator-heights, 2);
+        
+    }
+    .paginator__status{
+        line-height: nth($paginator-heights, 2);
+
+    }
+
+
+    .paginator__btn{
+        line-height: nth($paginator-heights, 2);
+        width:nth($paginator-widths, 2);
+
+    }
+}
+
+@include MediumDevice{
+    .paginator__buttons{
+        // height:nth($paginator-heights, 3);
+
+    }
+    .paginator__status{
+        line-height: nth($paginator-heights, 3);
+
+    }
+
+
+    .paginator__btn{
+        line-height: nth($paginator-heights, 3);
+        width:nth($paginator-widths, 3);
+
+    }
+}
+
+/*************************/
+/////// CUSTOM CODE /////// 
+/*************************/

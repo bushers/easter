@@ -1,0 +1,78 @@
+
+/*************************/
+/////// GENERAL VARS //////
+/*************************/
+$footer-heights:58px 58px 58px!default;
+$footer-background-color:$color-2!default;
+
+/*************************/
+/////// CUSTOM VARS /////// 
+/*************************/
+//TODO vars
+
+
+/*************************/
+///// TYPOGRAPHY VARS /////
+/*************************/
+
+//TODO vars
+
+/*************************/
+///// COMPONENT CODE //////
+/*************************/
+.footer-container{
+    position: fixed; 
+    bottom:0px; 
+    left:0px; 
+    z-index: 999;
+    width:100%; 
+    height:nth($footer-heights, 1);
+    line-height:nth($footer-heights, 1);
+    background-color:$footer-background-color;
+}
+
+/*************************/
+/////// CUSTOM CODE /////// 
+/*************************/
+
+.social-buttons-wrapper{
+    position:absolute;
+    height:100%; 
+    width:150px; 
+    right:0px; 
+    top:0px;
+
+}
+
+
+.footer-container{
+    border-top:1px solid $color-4;
+}
+
+@include SmallDevice{
+    .footer-container{
+        background-color: transparent;
+    }
+
+
+    .footer-container{
+        border-top:none;
+    }
+}
+
+@include MediumDevice{
+    .footer-container{
+        border-top:1px solid $color-4;
+        background-color: $footer-background-color;
+    }
+
+    .social-buttons-wrapper{
+        width:200px;
+    }
+}
+
+@include OnEmbedDevice{
+    .social-buttons-wrapper{
+        width:50px;
+    }
+}
