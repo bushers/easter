@@ -1,0 +1,30 @@
+.carousel{
+    width: 100%;
+    padding: 1rem 0;
+
+    &__slide-container {
+        @include flex-center;
+    }
+    
+    &__ctrls {
+        @include flex-center;
+        font-size: 3rem;
+    }
+}
+
+@include SmallDevice{
+    .carousel{
+    }
+}
+
+
+@include MediumDevice{
+    .carousel{
+    }
+}
+
+@include OnEmbedDevice(){
+    .carousel{
+
+    }
+}

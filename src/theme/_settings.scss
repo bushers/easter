@@ -15,11 +15,8 @@ $font-2:$font-1;
 
 $res-url:"";
 
-
-/****************************
-*****************************
-**** COMPONENT VARIABLES ****
-*****************************
-*****************************/
-
-//FOOTER COMPONENT
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

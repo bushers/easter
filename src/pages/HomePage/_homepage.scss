@@ -1,46 +1,23 @@
-/*************************/
-/////// GENERAL VARS //////
-/*************************/
-
-//TODO vars
-
-/*************************/
-/////// CUSTOM VARS /////// 
-/*************************/
-
-//TODO vars
-
-/*************************/
-///// TYPOGRAPHY VARS /////
-/*************************/
-
-//TODO vars
-
-/*************************/
-///// COMPONENT CODE //////
-/*************************/
-.home-page{
-    
+.homepage{
+    @include flex-center;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 2rem;
 }
 
 @include SmallDevice{
-    .home-page{
+    .homepage{
     }
 }
 
 
 @include MediumDevice{
-    .home-page{
+    .homepage{
     }
 }
 
 @include OnEmbedDevice(){
-    .home-page{
+    .homepage{
 
     }
 }
-
-/*************************/
-/////// CUSTOM CODE /////// 
-/*************************/
-//TODO code

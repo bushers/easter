@@ -8,30 +8,13 @@ import {
     HashRouter as Router,
     Route,
     Switch,
-} from 'react-router-dom'
-
+} from 'react-router-dom';
 import HomePage from '../../pages/HomePage/HomePage';
-import DATA_SERVICE from '../../services/DataService';
-import FullPage from '../../pages/FullPage/FullPage';
 
 export const STATE_KEY = 'app';
 
 class App extends React.Component<AppProps, inAppState>{
-    constructor(props:AppProps) {
-        super(props);
-        this.state = inAppInitialState;
-    }
-
-    componentDidMount(){
-        if(DATA_SERVICE.isDataLoaded){
-            
-            this.props.loadData(DATA_SERVICE.getData()); 
-        }else{
-            DATA_SERVICE.load().then((e)=>{
-                this.props.loadData(e); 
-            })
-        }
-    }
+    state = inAppInitialState;
 
     render() {
 
@@ -52,7 +35,6 @@ function mapStateToProps(state: any, ownProps) {
         appState: state.app
     }
 }
-
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({loadData: ACTIONS.DATA_LOADED}, dispatch);
 

@@ -56,12 +56,20 @@ export const INIT_TRANSLATIONS:Translation = {
     valueMapDesc:[]
 }
 
-
-
 export interface iData{
     key:string;
     title: string;    
     graphType:string;
     copy: string[];    
     data: any[] | any;
+}
+
+export interface iMessage {
+    id: string | number;
+    msg: string | string[];
+    picSrc?: string;
+}
+
+export interface iEasterData {
+    messages: iMessage[];
 }

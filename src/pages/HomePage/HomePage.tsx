@@ -7,6 +7,8 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { IStoreState } from '../../_reducers';
 import { Translation } from '../../models/models';
 import { RouteComponentProps } from 'react-router';
+import { Carousel } from '../../components/ui/Carousel/Carousel';
+import { DATA } from '../../services/DataService';
 
 
 export interface HomePageProps extends ReactRedux.DispatchProp<any>, RouteComponentProps<any>{
@@ -34,8 +36,8 @@ export class HomePage extends React.Component<HomePageProps, HomePageState>{
         let cls = this.props.className || "";
 
         return (
-            <div className={"home-page " + cls}>
-                HOME                
+            <div className={"homepage " + cls}>
+                <Carousel slides={DATA.messages} />     
             </div>
         )
     }

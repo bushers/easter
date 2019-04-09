@@ -1,7 +1,7 @@
-import { Translation } from '../models/models';
+import { Translation, iEasterData } from '../models/models';
 // import fb from './Firebase'
 import * as Promise from 'bluebird'; 
-import uniqueId from 'lodash.uniqueid';
+import * as id from 'lodash.uniqueid';
 
 export class DataService{
     app:any;
@@ -42,7 +42,6 @@ export class DataService{
         return this.data[key];
     }
 
-
     getNavBar = ()=>{
         return this.data.navBar; 
     }
@@ -54,17 +53,16 @@ export class DataService{
     getData(){
         return this.data;
     }
-
 }
 
 const DATA_SERVICE = new DataService(); 
 
 export default DATA_SERVICE;
 
-const DATA = {
+export const DATA: iEasterData = {
     messages: [
-        { id: uniqueId('msg_'), value: 'Message number one' },
-        { id: uniqueId('msg_'), value: 'Message number two' },
-        { id: uniqueId('msg_'), value: 'Message number three' },
-    ]
+        { id: id('msg_'), msg: 'Message number one' },
+        { id: id('msg_'), msg: 'Message number two' },
+        { id: id('msg_'), msg: 'Message number three' },
+    ],
 };
