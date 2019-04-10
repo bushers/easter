@@ -43,9 +43,9 @@ export class FullPage extends React.Component<FullPageProps, FullPageState>{
                 <div className="row">
                     <div className="col s12">
                         <section>
-                            <HomePage 
+                            {/* <HomePage 
                                 locale={props.locale}
-                            />
+                            /> */}
                         </section>
                     </div>
                 </div>
