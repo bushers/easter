@@ -9,19 +9,18 @@ export interface CarouselProps {
 
 export interface CarouselState {
     currentSlideIdx: number;
-    show: boolean;
 }
 
 const Item = posed.div({
     enter: {
         opacity: 1,
         transform: 'translateY(0px)',
-        transition: { type: 'spring' }
+        transition: { type: 'spring', stiffness: 80, damping: 15, mass: 2 }
     },
     exit: {
         opacity: 0,
         transform: 'translateY(-50px)',
-        transition: { type: 'spring' }
+        transition: { type: 'spring', stiffness: 80, damping: 15, mass: 2 }
     },
 });
 
@@ -29,10 +28,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
     el: HTMLDivElement;
     state = {
         currentSlideIdx: 0,
-        show: true,
     };
-
-    toggle = (e: React.SyntheticEvent<any>) => this.setState(state => ({ show: !state.show }));
 
     nextSlide = () => {
         if (this.state.currentSlideIdx < (this.props.slides.length - 1)) {
@@ -53,22 +49,25 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
 
         return (
             <div className={"carousel " + cls} ref={e => this.el = e}>
-                <div className="carousel__slide-container" onClick={this.toggle}>
+                <div className="carousel__slide-container">
                     <PoseGroup>
                         {props.slides.map(e =>
                             e.idx === state.currentSlideIdx &&
-                            <Item key={e.id}>{currSlide.msg}</Item>)}
+                            <Item key={e.id}>
+                                <p className="carousel__text">{currSlide.msg}</p>
+                            </Item>
+                        )}
                     </PoseGroup>
                 </div>
                 <div className="carousel__ctrls">
-                    {state.currentSlideIdx > 0 &&
-                        <div className="carousel__prev" onClick={this.prevSlide}>
-                            {`<`}
-                        </div>}
-                    {state.currentSlideIdx < (props.slides.length - 1) &&
-                        <div className="carousel__next" onClick={this.nextSlide}>
-                            {`>`}
-                        </div>}
+                    <div className={`carousel__ctrl-btn carousel__prev ${state.currentSlideIdx > 0 ? '' : 'disabled'}`}
+                        onClick={this.prevSlide}>
+                        {`<`}
+                    </div>
+                    <div className={`carousel__ctrl-btn carousel__next ${state.currentSlideIdx < (props.slides.length - 1) ? '' : 'disabled'}`}
+                        onClick={this.nextSlide}>
+                        {`>`}
+                    </div>
                 </div>
             </div>
         )

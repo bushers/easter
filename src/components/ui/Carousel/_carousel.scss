@@ -6,16 +6,36 @@
         @include flex-center;
         height: 50px;
         cursor: pointer;
+    }
 
-        & > .box {
-            font-weight: 700;
-            font-size: 2rem;
-        }
+    &__text {
+        font-size: 1.4rem;
     }
     
     &__ctrls {
         @include flex-center;
-        font-size: 3rem;
+        width: 100px;
+        margin: auto;
+        font-size: 4rem;
+    }
+
+    &__ctrl-btn {
+        font-family: $font-2;
+        font-weight: bold;
+        cursor: pointer;
+
+        &.disabled {
+            opacity: 0.3;
+            cursor: initial;
+        }
+    }
+
+    &__prev {
+        margin-right: auto;
+    }
+
+    &__next {
+        margin-left: auto;
     }
 }
 
@@ -27,11 +47,9 @@
 
 @include MediumDevice{
     .carousel{
-    }
-}
 
-@include OnEmbedDevice(){
-    .carousel{
-
+        &__text {
+            font-size: 2.3rem;
+        }
     }
 }

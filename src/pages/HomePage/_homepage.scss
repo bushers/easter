@@ -3,6 +3,7 @@
     width: 100vw;
     min-height: 100vh;
     padding: 2rem;
+    background: $e-green-light;
 }
 
 @include SmallDevice{
@@ -13,11 +14,5 @@
 
 @include MediumDevice{
     .homepage{
-    }
-}
-
-@include OnEmbedDevice(){
-    .homepage{
-
     }
 }

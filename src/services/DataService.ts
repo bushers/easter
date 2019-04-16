@@ -37,7 +37,6 @@ export class DataService {
         })
     }
 
-
     getByKey = (key: string) => {
         return this.data[key];
     }
@@ -61,8 +60,20 @@ export default DATA_SERVICE;
 
 export const DATA: iEasterData = {
     messages: [
-        { id: id('msg_'), idx: 0, msg: 'Message number one' },
-        { id: id('msg_'), idx: 1, msg: 'Message number two' },
-        { id: id('msg_'), idx: 2, msg: 'Message number three' },
+        {
+            id: id('msg_'),
+            idx: 0,
+            msg: 'Message number one'
+        },
+        {
+            id: id('msg_'),
+            idx: 1,
+            msg: 'Message number two'
+        },
+        {
+            id: id('msg_'),
+            idx: 2,
+            msg: 'Message number three'
+        },
     ],
 };
