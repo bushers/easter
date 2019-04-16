@@ -50,7 +50,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
         return (
             <div className={"carousel " + cls} ref={e => this.el = e}>
                 <div className="carousel__slide-container">
-                    <PoseGroup>
+                    <PoseGroup animateOnMount>
                         {props.slides.map(e =>
                             e.idx === state.currentSlideIdx &&
                             <Item key={e.id}>
