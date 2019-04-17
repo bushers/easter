@@ -10,10 +10,10 @@
     &__img {
         display: block;
         width: 80vw;
-        max-width: 360px;
+        max-width: 460px;
         height: auto;
         border-radius: 15px;
-        margin-bottom: 1.4rem;
+        margin: 0 auto 1.4rem auto;
     }
 
     &__text {
@@ -55,6 +55,10 @@
 
 @include MediumDevice{
     .carousel{
+
+        &__img {
+            margin-bottom: 1.5rem;
+        }
 
         &__text {
             font-size: 2.3rem;

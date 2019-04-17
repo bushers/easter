@@ -80,7 +80,7 @@ export const DATA: iEasterData = {
             id: id('msg_'),
             idx: 3,
             picSrc: `${RES_URL}img/pic.jpg`,
-            msg: 'Message number four'
+            msg: 'Message number four, lorum ipsum long message, lorum ipsum long message, lorum ipsum long message, lorum ipsum long message,'
         },
     ],
 };
