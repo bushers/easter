@@ -4,12 +4,21 @@
 
     &__slide-container {
         @include flex-center;
-        height: 50px;
         cursor: pointer;
+    }
+
+    &__img {
+        display: block;
+        width: 80vw;
+        max-width: 360px;
+        height: auto;
+        border-radius: 15px;
+        margin-bottom: 1.4rem;
     }
 
     &__text {
         font-size: 1.4rem;
+        text-align: center;
     }
     
     &__ctrls {

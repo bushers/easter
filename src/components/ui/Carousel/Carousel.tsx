@@ -54,6 +54,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
                         {props.slides.map(e =>
                             e.idx === state.currentSlideIdx &&
                             <Item key={e.id}>
+                                {e.picSrc && <img className="carousel__img" src={e.picSrc} />}
                                 <p className="carousel__text">{currSlide.msg}</p>
                             </Item>
                         )}

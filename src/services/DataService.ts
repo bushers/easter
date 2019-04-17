@@ -2,6 +2,7 @@ import { Translation, iEasterData } from '../models/models';
 // import fb from './Firebase'
 import * as Promise from 'bluebird';
 import * as id from 'lodash.uniqueid';
+import { RES_URL } from '../config';
 
 export class DataService {
     app: any;
@@ -74,6 +75,12 @@ export const DATA: iEasterData = {
             id: id('msg_'),
             idx: 2,
             msg: 'Message number three'
+        },
+        {
+            id: id('msg_'),
+            idx: 3,
+            picSrc: `${RES_URL}img/pic.jpg`,
+            msg: 'Message number four'
         },
     ],
 };
