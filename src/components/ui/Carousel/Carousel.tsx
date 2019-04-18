@@ -30,6 +30,15 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
         currentSlideIdx: 0,
     };
 
+    componentDidMount() {
+        // Pre-load images
+        this.props.slides.forEach(slide => {
+            if (slide.picSrc) {
+                new Image().src = slide.picSrc
+            }
+        });
+    }
+
     nextSlide = () => {
         if (this.state.currentSlideIdx < (this.props.slides.length - 1)) {
             this.setState(state => ({ currentSlideIdx: state.currentSlideIdx + 1 }))
