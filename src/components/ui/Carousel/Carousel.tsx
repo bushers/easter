@@ -26,6 +26,7 @@ const Item = posed.div({
 
 export class Carousel extends React.Component<CarouselProps, CarouselState>{
     el: HTMLDivElement;
+    images: string[] = [];
     state = {
         currentSlideIdx: 0,
     };
@@ -34,7 +35,8 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
         // Pre-load images
         this.props.slides.forEach(slide => {
             if (slide.picSrc) {
-                new Image().src = slide.picSrc
+                const img = new Image().src = slide.picSrc;
+                this.images.push(img);
             }
         });
     }
@@ -58,6 +60,10 @@ export class Carousel extends React.Component<CarouselProps, CarouselState>{
 
         return (
             <div className={"carousel " + cls} ref={e => this.el = e}>
+                <div className="carousel__img-loader">
+                    {this.images.length > 0
+                        && this.images.map((img, i) => <img className="img" key={i} src={img} />)}
+                </div>
                 <div className="carousel__slide-container">
                     <PoseGroup animateOnMount>
                         {props.slides.map(e =>
